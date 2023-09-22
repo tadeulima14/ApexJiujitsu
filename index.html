@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Apex Jiujitsu</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Apex Jiujitsu </h1>
+    </header>
+
+    <nav>
+        <a href="home">Home</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
+        <a href="donate">Donate</a>
+    </nav>
+
+    <main>
+        <img src="images/studio.jpg" alt="yinyang" class='yinyang'>
+        <h2>Join us at Apex Jiujitsu!<br> Learn self defense today</h2>
+
+        <div class='buttons'>
+            <button id="themeButton">Theme Change</button>
+            <button id="yin_yang">Spin Yin Yang</button>
+        </div>
+
+        <img src="images/yinyang.png" alt="yin&yang" id="yinyang">
+
+
+        <p class="coordinates">X: <span id = "x"></span> <!--Id's x and y-->
+        <p class="coordinates">Y: <span id = "y"></span>
+                
+            <!--Tracks x and y position of mouse continuosly-->
+        <script>
+            window.addEventListener('mousemove', function(e) { 
+            document.getElementById('x'). textContent = e.x; 
+            document.getElementById('y'). textContent = e.y; 
+            });
+        </script>
+
+        <script>
+
+            const themeButton = document.getElementById('themeButton');
+            const body = document.body;
+            themeButton.addEventListener('click', function() {
+            body.classList.toggle('light-theme'); //override default look with light theme css values
+            console.log('Theme changed..');
+            });
+            
+        </script>
+
+        <script>
+            const spinImage = document.getElementById('yinyang');
+            function toggleSpin() {
+            spinImage.classList.toggle('spin');} //enables img to spin by linking the id
+
+            const yinYangButton = document.getElementById('yin_yang');
+            yinYangButton.addEventListener('click', toggleSpin); //targets spin yin yang button to spin img on click.
+            console.log('Yin&Yang activated')
+
+        </script>
+
+    </main>
+
+</body>
+
+</html>
